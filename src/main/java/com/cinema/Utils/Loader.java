@@ -15,19 +15,20 @@ public class Loader {
         this.stage = stage;
     }
 
-    public void borderPane( String view, Integer width, Integer height, String title) throws IOException {
+    public void borderPane(String path, String view, Integer width, Integer height, String title) throws IOException {
         BorderPane root = new BorderPane();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/cinema/views/" + view));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/cinema/views/" + path + "/" + view));
         Parent fxmlRoot = fxmlLoader.load();
         root.setCenter(fxmlRoot);
         if (width == null || height == null) {
             width = 600;
-            height = 400;
+            height = 600;
         }
         Scene scene = new Scene(root, width, height);
         stage.setTitle(title);
         stage.setScene(scene);
         stage.show();
+
     }
 
 
