@@ -6,5 +6,7 @@ module com.cinema {
     requires com.dlsc.formsfx;
 
     opens com.cinema to javafx.fxml;
+    opens com.cinema.Controller.AuthController to javafx.fxml ;
     exports com.cinema;
+
 }
