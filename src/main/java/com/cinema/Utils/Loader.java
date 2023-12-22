@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Loader {
-    private Stage stage;
+    private final Stage stage;
 
     public Loader(Stage stage) {
         this.stage = stage;
