@@ -10,5 +10,7 @@ module.exports = (req, res, next) => {
         next();
     } catch (error) {
         res.status(400).json({ message: 'Token không hợp lệ' });
+                res.status(400).json({ message: 'Token không hợp lệ' });
+
     }
 };
