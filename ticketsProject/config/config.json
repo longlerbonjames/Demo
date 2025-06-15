@@ -1,23 +1,22 @@
-{
-  "development": {
-    "username": "sa",
-    "password": "123",
-    "database": "DB_ShopOnline",
-    "host": "localhost",
-    "dialect": "mssql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
+"development": {
+  "username": "root",
+  "password": "", // nếu MySQL bạn không có mật khẩu thì để ""
+  "database": "DB_ShopOnline",
+  "host": "127.0.0.1",
+  "dialect": "mysql",
+  "port": 3306
+},
+"test": {
+  "username": "root",
+  "password": "",
+  "database": "database_test",
+  "host": "127.0.0.1",
+  "dialect": "mysql"
+},
+"production": {
+  "username": "root",
+  "password": "",
+  "database": "database_production",
+  "host": "127.0.0.1",
+  "dialect": "mysql"
 }
