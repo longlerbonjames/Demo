@@ -3,10 +3,10 @@ import * as AuthController from '../controllers/authController.js';
 import * as movieController from '../controllers/movieController.js';
 const router = express.Router();
 
-router.get('/now-showing', movieController.getNowShowingMovies);
-router.get('/coming-soon', movieController.getComingSoonMovies);
+router.get('/movies', movieController.getMoviesByStatus);
 router.get('/search', movieController.searchMovies);
-
+router.get('/movies/:id', movieController.detailMovie);
+router.get('/showtimes', movieController.getShowtimes);
 // router.post('/products/UploadImage', uploadMiddleware, uploadImage);
 
 router.post('/register', AuthController.register);
