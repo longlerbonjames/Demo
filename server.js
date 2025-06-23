@@ -2,10 +2,11 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import swaggerUi from "swagger-ui-express";
-import swaggerFile from './swagger-output.json' assert { type: 'json' }; // ✅ Cú pháp đúng
 import db from "./models/index.js";
 import routes from "./routes/routes.js";
+import fs from 'fs';
 
+const swaggerFile = JSON.parse(fs.readFileSync('./swagger-output.json', 'utf-8'));
 const app = express();
 
 app.use(cors({
@@ -34,3 +35,4 @@ db.sequelize.sync().then(() => {
         
     });
 });
+ 
