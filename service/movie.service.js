@@ -1,4 +1,4 @@
-import { Op } from 'sequelize';
+import { Op, where } from 'sequelize';
 import db from '../models/index.js';
 import sequelize from '../config/database.js';
 
@@ -15,7 +15,6 @@ export const getMoviesByStatus = async (status) => {
 
 const searchMovies = async (title, genre) => {
   const whereClause = {};
-
   if (title) {
     whereClause.title = { [Op.like]: `%${title}%` };
   }
@@ -26,9 +25,8 @@ const searchMovies = async (title, genre) => {
 
   const movies = await db.Movie.findAll({
     where: whereClause,
-    order: [['release_date', 'ASC']]
+    order: [['release_date', 'ASC']] 
   });
-
   return movies;
 };
 
@@ -49,7 +47,6 @@ export const getShowtimesByDateAndCinema = async (date, cinemaId) => {
     JOIN cinemas c ON h.cinema_id = c.cinema_id
     WHERE 1 = 1
   `;
-
   const replacements = {};
 
   if (date) {
